@@ -1,0 +1,71 @@
+﻿@model CrudNetCore5.Models.Persona;
+@{
+    ViewData["Title"] = "Eliminar Persona";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+     <div class="row">
+            <div class="col-sm-12">
+            <h3>Eliminar Persona</h3>
+            </div>
+      </div>
+    <div class="row">
+        <form class="col s12" method="post" asp-action="Delete">
+
+            <input type="hidden" asp-for-id="Id" />
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" disabled />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="input-field col s6">
+                    <label asp-for="Apellido" class="control-label"></label>
+                    <input asp-for="Apellido" class="form-control" disabled />
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <label asp-for="NroDocumento" class="control-label"></label>
+                    <input asp-for="NroDocumento" class="form-control" disabled />
+                    <span asp-validation-for="NroDocumento" class="text-danger"></span>
+                </div>
+                <div class="input-field col s6">
+                    <label asp-for="CorreoElectronico" class="control-label"></label>
+                    <input asp-for="CorreoElectronico" type="email" class="form-control" disabled />
+                    <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input asp-for="Telefono" class="form-control" disabled />
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">   
+                <div class="col s6"> 
+                    <div class="inline">
+                        <label asp-for="FechaNacimiento" class="control-label"></label>
+                        <input asp-for="FechaNacimiento" class="form-control" disabled />
+                        <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                  <input type="submit" value="Eliminar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+</div>
+
+@section Scripts {
+
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+}
